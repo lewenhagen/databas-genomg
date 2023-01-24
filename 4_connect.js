@@ -1,7 +1,9 @@
 "use strict";
 
 const mysql = require("promise-mysql");
+let test = require("./text.txt");
 
+console.log(test)
 /**
  * Main function.
  * @async
@@ -11,16 +13,19 @@ const mysql = require("promise-mysql");
     let sql;
     let res;
     const db = await mysql.createConnection({
-        "host":     "work.local",
+        "host":     "localhost",
         "user":     "dbadm",
         "password": "P@ssw0rd",
         "database": "forest"
     });
 
-    sql = "SELECT 1+1 AS Sum";
+    sql = "SELECT * FROM rainforest;";
     res = await db.query(sql);
 
     console.info(res);
 
     db.end();
 })();
+
+// loopa med for of...
+// JSON.stringify(res, null, 4);

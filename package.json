@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "mysql": "^2.18.1",
-    "promise-mysql": "^5.2.0"
+    "promise-mysql": "^5.2.0",
+    "readline-promise": "^1.0.5"
   }
 }
