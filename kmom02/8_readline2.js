@@ -16,8 +16,6 @@ const readline = require('readline-promise').default;
     });
 
     let search = await rl.questionAsync("Search for: ")
-    // let search2 = await rl.questionAsync("Search for something more: ")
-    // console.log(search, search2)
     let data = await helpers.searchForests(db, search);
 
     console.table(JSON.parse(data));
