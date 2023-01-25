@@ -2,11 +2,6 @@
 
 const mysql = require("promise-mysql");
 
-/**
- * Main function.
- * @async
- * @returns void
- */
 (async function() {
     let sql;
     let res;
