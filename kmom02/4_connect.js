@@ -1,9 +1,7 @@
 "use strict";
 
 const mysql = require("promise-mysql");
-let test = require("./text.txt");
 
-console.log(test)
 /**
  * Main function.
  * @async
