@@ -19,6 +19,7 @@ async function main () {
 
     let data = await getFile(path);
     console.log(data);
+    
     console.log("AFTER");
 }
 
