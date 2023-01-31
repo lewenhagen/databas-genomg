@@ -1,21 +1,30 @@
 "use strict";
 
-// let helpers = {
-//     searchForests: async function(db, what) {
-//         let sql = `SELECT forest_name AS NAME FROM rainforest WHERE forest_name LIKE ?;`;
-//         let res = await db.query(sql, [`%${what}%`]);
+const mysql = require("promise-mysql");
+const config = require("./config.json");
 
-//         return JSON.stringify(res, null, 4);
-//     }
-// }
+let helpers = {
+    searchForests: async function(what) {
+        const db = await mysql.createConnection(config);
+        let sql = `SELECT forest_name AS NAME FROM rainforest WHERE forest_name LIKE ?;`;
+        let res = await db.query(sql, [`%${what}%`]);
 
-async function searchForests(db, what) {
-    let sql = `SELECT forest_name AS NAME FROM rainforest WHERE forest_name LIKE ?;`;
-    let res = await db.query(sql, [`%${what}%`]);
+        return JSON.stringify(res, null, 4);
+    },
+    getAllForests: async function() {
+        const db = await mysql.createConnection(config);
+        let sql = `SELECT * FROM rainforest;`;
+        let res = await db.query(sql);
 
-    return JSON.stringify(res, null, 4);
+        return res;
+    }
 }
 
-module.exports = {
-    searchForests: searchForests
-};
+// async function searchForests(db, what) {
+//     let sql = `SELECT forest_name AS NAME FROM rainforest WHERE forest_name LIKE ?;`;
+//     let res = await db.query(sql, [`%${what}%`]);
+
+//     return JSON.stringify(res, null, 4);
+// }
+
+module.exports = helpers;
