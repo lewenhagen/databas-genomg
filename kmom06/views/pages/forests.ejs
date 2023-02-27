@@ -1,0 +1,32 @@
+<%- include("../partials/header.ejs") %>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Location</th>
+<th>Area</th>
+<th>Acronym</th>
+<th>Type</th>
+</tr>
+<% for (const row of all) { %>
+    <tr>
+        <td>
+            <%= row.forest_name %>
+        </td>
+        <td>
+            <%= row.location %>
+        </td>
+        <td>
+            <%= row.area %>
+        </td>
+        <td>
+            <%= row.acronym %>
+        </td>
+        <td>
+            <%= row.forest_type %>
+        </td>
+    </tr>
+<% } %>
+</table>
+
+<%- include("../partials/footer.ejs") %>
