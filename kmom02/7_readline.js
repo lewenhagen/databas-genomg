@@ -1,7 +1,7 @@
 "use strict";
 
 const mysql = require("promise-mysql");
-const config = require("./config.json");
+const config = require("../config.json");
 const helpers = require("./helpers.js");
 const readline = require("readline");
 
@@ -17,7 +17,7 @@ const rl = readline.createInterface({
     rl.question("Vad vill du söka efter? ", async (search) => {
         let data = await helpers.searchForests(db, search);
 
-        console.log(data);
+        console.table(data);
         rl.close();
         db.end();
     });

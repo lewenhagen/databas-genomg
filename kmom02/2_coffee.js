@@ -7,10 +7,11 @@
 //     }
 // };
 
-function coffee (roast) {
+function coffee (brand, roast) {
+    this.brand = brand;
     this.roast = roast;
     this.pour = function () {
-        console.log(`Pouring som ${this.roast}.`);
+        console.log(`Pouring some ${this.brand} - ${this.roast}.`);
     };
 }
 

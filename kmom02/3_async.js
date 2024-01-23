@@ -9,13 +9,21 @@ const path = "./text.txt";
 //     console.log(data);
 // });
 
-(async function () {
-    console.log("BEFORE");
-    let data = await fs.readFile(path, "utf8");
-    console.log(data);
+// (async function () {
+//     console.log("BEFORE");
+//     let data = await fs.readFile(path, "utf8");
+//     console.log(data);
     
-    console.log("AFTER");
-})();
+//     console.log("AFTER");
+// })();
+
+async function main () {
+  console.log("1) BEFORE");
+  let data = await fs.readFile(path, "utf8");
+  console.log(data);
+  
+  console.log("3) AFTER");
+}
 
 
-
+main()

@@ -6,7 +6,7 @@ const mysql = require("promise-mysql");
     let sql;
     let res;
     const db = await mysql.createConnection({
-        "host":     "localhost",
+        "host":     "work.local",
         "user":     "dbadm",
         "password": "P@ssw0rd",
         "database": "forest"
@@ -22,3 +22,4 @@ const mysql = require("promise-mysql");
 
 // loopa med for of...
 // JSON.stringify(res, null, 4);
+

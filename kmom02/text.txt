@@ -1,4 +1,1 @@
-hej
-här
-kommer
-lite text
+2) This is the textfile
