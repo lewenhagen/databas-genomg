@@ -1,0 +1,6 @@
+{
+    "host":     "work.local",
+    "user":     "dbadm",
+    "password": "P@ssw0rd",
+    "database": "forest"
+}

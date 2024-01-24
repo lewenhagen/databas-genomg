@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %>
+
+<h1>Update forest: <%= forest.forest_name %></h1>
+
+<form method="post" action="/update">
+    <label>Name:</label>
+    <input type="text" name="f_name" value="<%= forest.forest_name %>">
+    <label>Location:</label>
+    <input type="text" name="f_location" value="<%= forest.location %>">
+    <label>Acronym:</label>
+    <input type="text" name="f_acronym" value="<%= forest.acronym %>" readonly>
+    <label>Area:</label>
+    <input type="number" name="f_area" value="<%= forest.area %>">
+    <label>Type:</label>
+    <input type="text" name="f_type" value="<%= forest.forest_type %>">
+    <label>Added:</label>
+    <input type="date" name="f_added" value="<%= forest.added %>">
+
+    <input type="submit" value="Update">
+</form>
+
+<%- include("../partials/footer.ejs") %>

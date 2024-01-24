@@ -1,0 +1,26 @@
+<%- include("../partials/header.ejs") %>
+
+<h1>All forests</h1>
+
+<table>
+    <tr>
+        <th>Name</th><th>Location</th><th>Acronym</th><th>Area</th><th>Type</th><th>Added</th><th>Action</th>
+    </tr>
+    <% for (const row of all)  { %>
+        <tr>
+            <td><%= row.forest_name %></td>
+            <td><%= row.location %></td>
+            <td><%= row.acronym %></td>
+            <td><%= row.area %></td>
+            <td><%= row.forest_type %></td>
+            <td><%= row.added %></td>
+            <td>
+                <a href="/update/<%= row.acronym %>">Update</a> | 
+                <a href="/delete/<%= row.acronym %>">Delete</a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+
+<%- include("../partials/footer.ejs") %>

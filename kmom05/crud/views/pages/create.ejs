@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %>
+
+<h1>Create Entry</h1>
+
+<form method="post">
+    <label>Name:</label>
+    <input type="text" name="f_name">
+    <label>Location:</label>
+    <input type="text" name="f_location">
+    <label>Acronym:</label>
+    <input type="text" name="f_acronym">
+    <label>Area:</label>
+    <input type="number" name="f_area">
+    <label>Type:</label>
+    <select name="f_type">
+        <option value="tempered">Tempered</option>
+        <option value="tropical">Tropical</option>
+    </select>
+    <input type="submit" value="Create">
+</form>
+
+<%- include("../partials/footer.ejs") %>
