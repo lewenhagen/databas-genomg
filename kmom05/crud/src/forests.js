@@ -6,17 +6,18 @@ const config = require("../config/db/config.json");
 
 async function getAllForests () {
     const db = await mysql.createConnection(config);
-    let sql = `SELECT 
-        forest_name,
-        location,
-        acronym,
-        area,
-        forest_type,
-        DATE_FORMAT(added, "%Y-%m-%d") as added
-    FROM rainforest;`;
+    // let sql = `SELECT 
+    //     forest_name,
+    //     location,
+    //     acronym,
+    //     area,
+    //     forest_type,
+    //     DATE_FORMAT(added, "%Y-%m-%d") as added
+    // FROM rainforest;`;
+    let sql = `CALL get_all();`;
     let res = await db.query(sql);
-
-    return res;
+    console.log(res)
+    return res[0];
 }
 
 async function insertForest (data) {
